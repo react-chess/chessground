@@ -1,0 +1,57 @@
+{
+  "name": "@react-chess/chessground",
+  "version": "0.0.1-rc1",
+  "description": "Chessground react wrapper",
+  "main": "build/cjs/index.js",
+  "module": "build/esm/index.js",
+  "types": "build/esm/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "build:cjs": "tsc --module commonjs --outDir build/cjs",
+    "build:esm": "tsc",
+    "lint": "eslint . --ignore-path .gitignore --ext .tsx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/react-chess/chessground.git"
+  },
+  "keywords": [
+    "chess",
+    "react",
+    "chessground",
+    "lichess",
+    "typescript"
+  ],
+  "author": "H-Richard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/react-chess/chessground/issues"
+  },
+  "homepage": "https://github.com/react-chess/chessground#readme",
+  "devDependencies": {
+    "@types/react": "^17.0.5",
+    "@types/react-dom": "^17.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.22.1",
+    "@typescript-eslint/parser": "^4.22.1",
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "semantic-release": "^17.4.2",
+    "typescript": "^4.2.4"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "dependencies": {
+    "chessground": "^7.11.1"
+  }
+}
