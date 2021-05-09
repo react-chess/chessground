@@ -33,7 +33,7 @@ After installing, the component can be default imported and it has 4 optional pr
 Renders a simple board, with pieces in their default position:
 
 ```jsx
-import Chessground from 'chessground';
+import Chessground from '@react-chess/chessground';
 
 ReactDOM.render(
   <Chessground />,
