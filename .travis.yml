@@ -12,6 +12,8 @@ jobs:
     - stage: release
       node_js: "14"
       deploy:
+        on:
+          branch: main
         provider: "script"
         skip_cleanup: true
         script:
