@@ -17,7 +17,7 @@ interface Props {
 }
 
 function Chessground({
-  width = 900, height = 900, config, fen,
+  width = 900, height = 900, config = {}, fen = '',
 }: Props) {
   const [api, setApi] = useState<Api | null>(null);
 
@@ -28,14 +28,13 @@ function Chessground({
       const chessgroundApi = ChessgroundApi(ref.current, {
         resizable: true,
         animation: { enabled: true, duration: 200 },
-        ...(config ?? {}),
+        ...config,
       });
       setApi(chessgroundApi);
-
-      return () => api!.destroy();
+    } else if (ref && ref.current && api) {
+      api.set(config);
     }
-    return () => {};
-  }, [ref, config, api]);
+  }, [ref, config]);
 
   useEffect(() => {
     api?.set({ fen });
