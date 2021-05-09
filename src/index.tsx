@@ -26,7 +26,6 @@ function Chessground({
   useEffect(() => {
     if (ref && ref.current && !api) {
       const chessgroundApi = ChessgroundApi(ref.current, {
-        resizable: true,
         animation: { enabled: true, duration: 200 },
         ...config,
       });
