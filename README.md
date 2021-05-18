@@ -26,9 +26,6 @@ After installing, the component can be default imported and it has 4 optional pr
  - `height: number` defaults to 900, determines height of the chessboard in pxs
  
  - `config: Partial<Config>` defaults to `{}`, determines various [configuration properties](https://github.com/ornicar/chessground/blob/master/src/config.ts#L7-L90) of Chessground
- 
- - `fen: string` defaults to empty string, changing this will move the pieces in an animated way if `animation.enabled` is set to true
-
 
 Renders a simple board, with pieces in their default position:
 

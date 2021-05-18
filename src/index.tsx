@@ -7,17 +7,14 @@ import 'chessground/assets/chessground.cburnett.css';
 import { Api } from 'chessground/api';
 import { Config } from 'chessground/config';
 
-import * as cg from 'chessground/types';
-
 interface Props {
   width?: number
   height?: number
   config?: Partial<Config>
-  fen?: cg.FEN
 }
 
 function Chessground({
-  width = 900, height = 900, config = {}, fen = '',
+  width = 900, height = 900, config = {},
 }: Props) {
   const [api, setApi] = useState<Api | null>(null);
 
@@ -33,11 +30,11 @@ function Chessground({
     } else if (ref && ref.current && api) {
       api.set(config);
     }
-  }, [ref, config]);
+  }, [ref]);
 
   useEffect(() => {
-    api?.set({ fen });
-  }, [api, fen]);
+    api?.set(config);
+  }, [api, config]);
 
   return (
     <div style={{ height, width }}>
