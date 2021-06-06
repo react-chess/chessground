@@ -10,11 +10,12 @@ import { Config } from 'chessground/config';
 interface Props {
   width?: number
   height?: number
+  contained?: boolean;
   config?: Partial<Config>
 }
 
 function Chessground({
-  width = 900, height = 900, config = {},
+  width = 900, height = 900, config = {}, contained = false,
 }: Props) {
   const [api, setApi] = useState<Api | null>(null);
 
@@ -37,7 +38,7 @@ function Chessground({
   }, [api, config]);
 
   return (
-    <div style={{ height, width }}>
+    <div style={{ height: contained ? '100%' : height, width: contained ? '100%' : width }}>
       <div ref={ref} style={{ height: '100%', width: '100%', display: 'table' }} />
     </div>
   );
