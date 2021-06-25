@@ -1,6 +1,6 @@
 {
   "name": "@react-chess/chessground",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Chessground react wrapper",
   "main": "build/cjs/index.js",
   "module": "build/esm/index.js",
@@ -26,7 +26,7 @@
     "typescript"
   ],
   "author": "H-Richard",
-  "license": "ISC",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/react-chess/chessground/issues"
   },
