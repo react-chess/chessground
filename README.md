@@ -7,7 +7,7 @@ This package is in very early stages of development, thus usage of this package 
 
 ## Installation
 
-Currently the package has `peerDependencies` on `react: ^17.0.2` and `react-dom: ^17.0.2`, however this will be lowered to `^16.8.0` once the package is more stable.
+Currently the package has `peerDependencies` on `react: ^16.8.0` and `react-dom: ^16.8.0`.
 
 ```shell
 # If you are using npm:
@@ -21,13 +21,15 @@ yarn add @react-chess/chessground
 
 After installing, the component can be default imported and it has 4 optional props:
 
- - `width: number` defaults to 900, determines width of the chessboard in pxs
+ - `width: number` defaults to `900`, determines width of the chessboard in pxs
  
- - `height: number` defaults to 900, determines height of the chessboard in pxs
+ - `height: number` defaults to `900`, determines height of the chessboard in pxs
  
  - `config: Partial<Config>` defaults to `{}`, determines various [configuration properties](https://github.com/ornicar/chessground/blob/master/src/config.ts#L7-L90) of Chessground
+ 
+ - `contained: boolean` defaults to `false`, when enabled renders the chessboard in a `100%` width & height div.
 
-Renders a simple board, with pieces in their default position:
+Renders a simple `900 x 900` board, with pieces in their default position:
 
 ```jsx
 import Chessground from '@react-chess/chessground';
