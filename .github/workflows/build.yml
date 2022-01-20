@@ -14,4 +14,3 @@ jobs:
       - uses: actions/setup-node@v2
       - run: yarn
       - run: yarn build:esm && yarn build:cjs
-      - run: yarn semantic-release
