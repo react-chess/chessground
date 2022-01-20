@@ -1,0 +1,21 @@
+name: Deploy
+
+on:
+  workflow_run:
+    workflows: [Build]
+    types: [completed]
+    branches: ["main"]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: yarn
+      - run: yarn build:esm && yarn build:cjs
+      - run: yarn semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

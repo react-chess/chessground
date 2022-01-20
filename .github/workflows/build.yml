@@ -1,0 +1,17 @@
+name: Build
+
+on:
+  workflow_run:
+    workflows: [Lint]
+    types: [completed]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: yarn
+      - run: yarn build:esm && yarn build:cjs
+      - run: yarn semantic-release
