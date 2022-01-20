@@ -2,14 +2,11 @@ name: Build
 
 on:
   workflow_run:
-    workflows: [ Lint ]
-    types: [ completed ]
-  push:
-  pull_request:
-    branches: [ '**' ]
+    workflows: [Lint]
+    types: [completed]
 
 jobs:
-  release:
+  build:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:

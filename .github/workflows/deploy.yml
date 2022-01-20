@@ -2,10 +2,9 @@ name: Deploy
 
 on:
   workflow_run:
-    workflows: [ Build ]
-    types: [ completed ]
-  push:
-    branches: [ 'main' ]
+    workflows: [Build]
+    types: [completed]
+    branches: ["main"]
 
 jobs:
   release:
@@ -18,5 +17,5 @@ jobs:
       - run: yarn build:esm && yarn build:cjs
       - run: yarn semantic-release
         env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

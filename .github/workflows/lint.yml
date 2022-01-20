@@ -3,10 +3,10 @@ name: Lint
 on:
   push:
   pull_request:
-    branches: [ '**' ]
+    branches: ["**"]
 
 jobs:
-  release:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
