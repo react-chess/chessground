@@ -1,6 +1,6 @@
 {
   "name": "@react-chess/chessground",
-  "version": "1.1.0",
+  "version": "1.2.3",
   "description": "Chessground react wrapper",
   "main": "build/cjs/index.js",
   "module": "build/esm/index.js",
