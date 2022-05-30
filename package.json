@@ -2,7 +2,7 @@
   "name": "@react-chess/chessground",
   "version": "1.2.3",
   "description": "Chessground react wrapper",
-  "main": "build/cjs/index.js",
+  "main": "build/esm/index.js",
   "module": "build/esm/index.js",
   "types": "build/esm/index.d.ts",
   "files": [
@@ -10,7 +10,6 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
-    "build:cjs": "tsc --module commonjs --outDir build/cjs",
     "build:esm": "tsc",
     "lint": "eslint . --ignore-path .gitignore --ext .tsx"
   },
