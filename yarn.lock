@@ -328,6 +328,19 @@
     lodash "^4.17.4"
     micromatch "^4.0.2"
 
+"@semantic-release/commit-analyzer@^9.0.2":
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/@semantic-release/commit-analyzer/-/commit-analyzer-9.0.2.tgz#a78e54f9834193b55f1073fa6258eecc9a545e03"
+  integrity sha512-E+dr6L+xIHZkX4zNMe6Rnwg4YQrWNXK+rNsvwOPpdFppvZO1olE2fIgWhv89TkQErygevbjsZFSIxp+u6w2e5g==
+  dependencies:
+    conventional-changelog-angular "^5.0.0"
+    conventional-commits-filter "^2.0.0"
+    conventional-commits-parser "^3.2.3"
+    debug "^4.0.0"
+    import-from "^4.0.0"
+    lodash "^4.17.4"
+    micromatch "^4.0.2"
+
 "@semantic-release/error@^2.2.0":
   version "2.2.0"
   resolved "https://registry.npmjs.org/@semantic-release/error/-/error-2.2.0.tgz"
@@ -923,10 +936,10 @@ chalk@^4.0.0, chalk@^4.1.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chessground@8.2.1:
-  version "8.2.1"
-  resolved "https://registry.yarnpkg.com/chessground/-/chessground-8.2.1.tgz#0cb686c0c88f78cc18b931ae3564e3d571156ca7"
-  integrity sha512-cM79y/kC0yI+S89XN6q7CXROi/YSrU3yPTEisNJNbXMuNoqfg6cmk9/9ulCXDR6U+bnVSsrgtorgoP9PGlZTuQ==
+chessground@8.3.5:
+  version "8.3.5"
+  resolved "https://registry.yarnpkg.com/chessground/-/chessground-8.3.5.tgz#1f4c48d88a40646042a82bb6d12663e64082f816"
+  integrity sha512-MnrQ2sO9FfHcPYwALuLCEQujEUWFqaVzfsn02iOBmFkndzpOk+9zn7rlSwksoJKZ5+LcrA0EaWgN+GzB0gzX8A==
 
 chownr@^2.0.0:
   version "2.0.0"
@@ -1122,6 +1135,18 @@ conventional-commits-parser@^3.0.0, conventional-commits-parser@^3.0.7:
     split2 "^3.0.0"
     through2 "^4.0.0"
     trim-off-newlines "^1.0.0"
+
+conventional-commits-parser@^3.2.3:
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/conventional-commits-parser/-/conventional-commits-parser-3.2.4.tgz#a7d3b77758a202a9b2293d2112a8d8052c740972"
+  integrity sha512-nK7sAtfi+QXbxHCYfhpZsfRtaitZLIA6889kFIouLvz6repszQDgxBu7wf2WbU+Dco7sAnNCJYERCwt54WPC2Q==
+  dependencies:
+    JSONStream "^1.0.4"
+    is-text-path "^1.0.1"
+    lodash "^4.17.15"
+    meow "^8.0.0"
+    split2 "^3.0.0"
+    through2 "^4.0.0"
 
 core-js-pure@^3.0.0:
   version "3.12.1"
@@ -2099,6 +2124,11 @@ import-from@^3.0.0:
   integrity sha512-CiuXOFFSzkU5x/CR0+z7T91Iht4CXgfCxVOFRhh2Zyhg5wOpWvvDLQUsWl+gcN+QscYBjez8hDCt85O7RLDttQ==
   dependencies:
     resolve-from "^5.0.0"
+
+import-from@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/import-from/-/import-from-4.0.0.tgz#2710b8d66817d232e16f4166e319248d3d5492e2"
+  integrity sha512-P9J71vT5nLlDeV8FHs5nNxaLbrpfAV5cF5srvbZfpwpcJoM/xZR3hiv+q+SAnuSmuGbXMWud063iIMx/V/EWZQ==
 
 imurmurhash@^0.1.4:
   version "0.1.4"
