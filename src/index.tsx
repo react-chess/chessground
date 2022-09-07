@@ -8,7 +8,7 @@ interface Props {
   width?: number
   height?: number
   contained?: boolean;
-  config?: Partial<Config>
+  config?: Config
 }
 
 function Chessground({
