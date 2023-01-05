@@ -8,11 +8,12 @@ interface Props {
   width?: number
   height?: number
   contained?: boolean;
-  config?: Config
+  config?: Config;
+  onApiReady?: (api: Api) => void;
 }
 
 function Chessground({
-  width = 900, height = 900, config = {}, contained = false,
+  width = 900, height = 900, config = {}, contained = false, onApiReady,
 }: Props) {
   const [api, setApi] = useState<Api | null>(null);
 
@@ -33,6 +34,12 @@ function Chessground({
   useEffect(() => {
     api?.set(config);
   }, [api, config]);
+
+  useEffect(() => {
+    if (api && onApiReady) {
+      onApiReady(api);
+    }
+  }, [api]);
 
   return (
     <div style={{ height: contained ? '100%' : height, width: contained ? '100%' : width }}>

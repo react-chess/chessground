@@ -24,5 +24,6 @@ module.exports = {
     'react/require-default-props': 'off',
     'no-use-before-define': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
+    'no-unused-vars': ['error', { argsIgnorePattern: 'api' }],
   },
 };
