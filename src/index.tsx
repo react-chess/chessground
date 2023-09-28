@@ -5,37 +5,25 @@ import { Config } from 'chessground/config';
 import { Api } from 'chessground/api';
 import { Key } from 'chessground/types';
 
-export type LongAlgebraicMove = `${Key}${Key}`
 
 interface Props {
   width?: number;
   height?: number;
   contained?: boolean;
   config?: Config;
-}
+};
 
-export interface ApiRef {
-  move: (moveStr: LongAlgebraicMove) => void;
-}
-
-const Chessground = forwardRef<ApiRef | undefined, Props>(
+const Chessground = forwardRef<Api | undefined, Props>(
   (
     { width = 900, height = 900, config = {}, contained = false }: Props,
     apiRef,
   ) => {
-    const [api, setApi] = useState<Api | null>(null);
+    const [api, setApi] = useState<Api | undefined>();
     const divRef = useRef<HTMLDivElement>(null);
 
-    const publicApi: ApiRef = {
-      move(moveStr: LongAlgebraicMove) {
-        console.log("[MOVE]", moveStr)
-        api!.move(moveStr.substring(0, 2) as Key, moveStr.substring(2,4) as Key)
-      }
-    }
-
     useImperativeHandle(apiRef, () => {
-      return publicApi;
-    }, [publicApi]);
+      return api;
+    }, [api]);
 
     useEffect(() => {
       if (divRef.current && !api) {
@@ -63,4 +51,5 @@ const Chessground = forwardRef<ApiRef | undefined, Props>(
   }
 );
 
+export type { Api, Config, Key };
 export default Chessground;
