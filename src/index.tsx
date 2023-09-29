@@ -27,10 +27,7 @@ const Chessground = forwardRef<Api | undefined, Props>(
 
     useEffect(() => {
       if (divRef.current && !api) {
-        const chessgroundApi = ChessgroundApi(divRef.current, {
-          animation: { enabled: true, duration: 200 },
-          ...config,
-        });
+        const chessgroundApi = ChessgroundApi(divRef.current, config);
         setApi(chessgroundApi);
       } else if (divRef.current && api) {
         api.set(config);
