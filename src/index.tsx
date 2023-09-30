@@ -1,44 +1,50 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Chessground as ChessgroundApi } from 'chessground';
+import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 
-import { Api } from 'chessground/api';
+import { Chessground as ChessgroundApi } from 'chessground';
 import { Config } from 'chessground/config';
+import { Api } from 'chessground/api';
+import { Key } from 'chessground/types';
+
 
 interface Props {
-  width?: number
-  height?: number
+  width?: number;
+  height?: number;
   contained?: boolean;
-  config?: Config
-}
+  config?: Config;
+};
 
-function Chessground({
-  width = 900, height = 900, config = {}, contained = false,
-}: Props) {
-  const [api, setApi] = useState<Api | null>(null);
+const Chessground = forwardRef<Api | undefined, Props>(
+  (
+    { width = 900, height = 900, config = {}, contained = false }: Props,
+    apiRef,
+  ) => {
+    const [api, setApi] = useState<Api | undefined>();
+    const divRef = useRef<HTMLDivElement>(null);
 
-  const ref = useRef<HTMLDivElement>(null);
+    useImperativeHandle(apiRef, () => {
+      return api;
+    }, [api]);
 
-  useEffect(() => {
-    if (ref && ref.current && !api) {
-      const chessgroundApi = ChessgroundApi(ref.current, {
-        animation: { enabled: true, duration: 200 },
-        ...config,
-      });
-      setApi(chessgroundApi);
-    } else if (ref && ref.current && api) {
-      api.set(config);
-    }
-  }, [ref]);
+    useEffect(() => {
+      if (divRef.current && !api) {
+        const chessgroundApi = ChessgroundApi(divRef.current, config);
+        setApi(chessgroundApi);
+      }
+    }, [divRef.current, api]);
 
-  useEffect(() => {
-    api?.set(config);
-  }, [api, config]);
+    useEffect(() => {
+      if (api) {
+        api.set(config);
+      }
+    }, [config]);
 
-  return (
-    <div style={{ height: contained ? '100%' : height, width: contained ? '100%' : width }}>
-      <div ref={ref} style={{ height: '100%', width: '100%', display: 'table' }} />
-    </div>
-  );
-}
+    return (
+      <div style={{ height: contained ? '100%' : height, width: contained ? '100%' : width }}>
+        <div ref={divRef} style={{ height: '100%', width: '100%', display: 'table' }} />
+      </div>
+    );
+  }
+);
 
+export type { Api, Config, Key };
 export default Chessground;
