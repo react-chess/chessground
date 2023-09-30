@@ -29,8 +29,6 @@ const Chessground = forwardRef<Api | undefined, Props>(
       if (divRef.current && !api) {
         const chessgroundApi = ChessgroundApi(divRef.current, config);
         setApi(chessgroundApi);
-      } else if (divRef.current && api) {
-        api.set(config);
       }
     }, [divRef.current, api]);
 
