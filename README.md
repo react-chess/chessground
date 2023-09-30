@@ -18,7 +18,7 @@ yarn add @react-chess/chessground
 
 ## Documentation
 
-After installing, the component can be default imported and it has 4 optional props:
+After installing, the component can be default imported and it has 5 optional props:
 
 - `width: number` defaults to `900`, determines width of the chessboard in pxs
 
